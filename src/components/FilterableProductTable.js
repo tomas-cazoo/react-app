@@ -7,7 +7,8 @@ class FilterableProductTable extends React.Component{
         return (
             <div>
                 <SearchBar />
-                <ProductTable />
+                <br/>
+                <ProductTable data={this.props.data} />
             </div>
         )
     }

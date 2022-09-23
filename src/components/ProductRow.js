@@ -2,7 +2,12 @@ import React from 'react'
 
 class ProductRow extends React.Component{
     render(){
-        return <p>Item</p>
+        return (
+            <tr>
+                <td>{this.props.name}</td>
+                <td>{this.props.price}</td>
+            </tr>
+        )
     }
 }
 

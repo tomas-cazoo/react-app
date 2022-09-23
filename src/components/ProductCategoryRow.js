@@ -2,7 +2,9 @@ import React from 'react'
 
 class ProductCategoryRow extends React.Component{
     render(){
-        return <p>Item</p>
+        return  <tr>
+                    <th>{this.props.category}</th>
+                </tr>
     }
 }
 
