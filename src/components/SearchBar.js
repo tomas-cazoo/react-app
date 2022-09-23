@@ -4,9 +4,9 @@ class SearchBar extends React.Component{
     render(){
         return (
             <form>
-                <input type="text" placeholder="Search..." />
+                <input onChange={this.props.searchBarAction} type="text" placeholder="Search..." />
                 <p>
-                <input type="checkbox" />
+                <input onChange={this.props.checkBoxAction} type="checkbox" />
                 {' '}
                 Only show products in stock
                 </p>
