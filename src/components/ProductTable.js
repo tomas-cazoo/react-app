@@ -12,7 +12,7 @@ class ProductTable extends React.Component{
             rows.push(<ProductCategoryRow category={category} />)
             rows.push([...data
                         .filter(item => item.category === category)
-                        .map(row => <ProductRow name={row.name} price={row.price} />)])
+                        .map(row => <ProductRow product={row} />)])
         });
         return (
             <table>
