@@ -5,15 +5,15 @@ import ProductRow from './ProductRow'
 class ProductTable extends React.Component{
     render(){
         const data = this.props.data;
+        const rows = [];
         const productCategories = [...new Set(data.map(item => item.category))];
 
-        const productRows = [];
         productCategories.forEach(category => {
-            productRows.push(data
-                .filter(item => item.category === category)
-                .map(row => <ProductRow name={row.name} price={row.price} />))
+            rows.push(<ProductCategoryRow category={category} />)
+            rows.push([...data
+                        .filter(item => item.category === category)
+                        .map(row => <ProductRow name={row.name} price={row.price} />)])
         });
-
         return (
             <table>
                 <thead>
@@ -23,8 +23,7 @@ class ProductTable extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-                    <ProductCategoryRow category={productCategories[0]} />
-                    {productRows[0]}
+                    {rows}
                 </tbody>
             </table>
         )
